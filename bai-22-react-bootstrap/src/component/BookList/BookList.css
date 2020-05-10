@@ -1,0 +1,13 @@
+img {
+  height: 30px;
+  width: 30px;
+}
+.container {
+  margin-top: 5em;
+}
+.form-group {
+  display: flex;
+}
+.form-control {
+  width: 50%;
+}

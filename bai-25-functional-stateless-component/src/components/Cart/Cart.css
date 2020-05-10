@@ -1,0 +1,16 @@
+.form-inline .form-control {
+  width: 90% !important;
+}
+.rounded-circle {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+.btn-secondary {
+  background-color: white !important;
+  color: black !important;
+}
+nav {
+  display: flex;
+  justify-content: flex-end;
+}

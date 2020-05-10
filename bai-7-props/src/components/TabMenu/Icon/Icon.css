@@ -1,0 +1,21 @@
+.Icon {
+  height: 100px;
+  width: 200px;
+  border: 1px solid #dddddd;
+  background-color: #eeeeee;
+}
+.Icon p {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+img {
+  height: 50px;
+  width: 50px;
+  margin-top: 10px;
+}
+.active {
+  background-color: white !important;
+  border-top: 1px solid #8cdc52 !important;
+  color: #8cdc52 !important;
+  box-shadow: 1px 4px 5px #d8d8d8;
+}

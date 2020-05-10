@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+.example1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+  background-color: #575757;
+  position: relative;
+}
+.openModal {
+  position: absolute;
+  top: 20px;
+  left: 50px;
+}
+.modal {
+  height: 530px;
+  width: 850px;
+  justify-content: center;
+  border-radius: 6px;
+  background-color: #ffffff;
+  position: relative;
+  animation: 1s ease 0s 1 normal none running fadeIn;
+}
+.close {
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  cursor: pointer;
+}
+.vis {
+  visibility: hidden;
+}
+.content {
+  padding: 50px;
+  text-align: start;
+  font-family: "Inter", sans-serif;
+}
+.content .footer {
+  text-align: end;
+}
+.footer input {
+  height: 50px;
+  width: 130px;
+}
+.footer input:nth-child(1) {
+  background-color: #28a745;
+  color: white;
+  font-family: "Inter", sans-serif;
+}
+.footer input:nth-child(2) {
+  font-family: "Inter", sans-serif;
+  margin-left: 10px;
+  color: white;
+  background-color: #d63447;
+}
+/* styles.css */
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

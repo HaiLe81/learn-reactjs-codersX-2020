@@ -1,0 +1,11 @@
+.Home {
+  display: flex;
+  flex-direction: column;
+  height: 730px;
+}
+.Home .Navbar {
+  height: 50px;
+}
+.Home .Content {
+  height: 680px;
+}

@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+.App {
+  display: flex;
+  justify-content: center;
+}
+body {
+  color: white !important;
+  font-family: "Inter", sans-serif;
+  background-color: #66b9c3;
+  position: relative;
+  height: 820px;
+}
+.navbar-dark .navbar-toggler {
+  border-color: white !important;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: white;
+}
+.navbar-dark .navbar-brand {
+  margin: 0 auto !important;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+}

@@ -1,0 +1,17 @@
+img {
+  height: 50px;
+  width: 50px;
+}
+.notification {
+  width: 100px;
+  position: relative;
+}
+.nodeRed {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  height: 15px;
+  width: 15px;
+  background-color: red;
+  border-radius: 50%;
+}

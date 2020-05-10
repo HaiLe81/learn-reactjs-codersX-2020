@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+.itemFlow {
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+  padding: 10px;
+}
+.itemFlow div:nth-of-type(1) {
+  flex-grow: 1;
+  text-align: start;
+  margin-left: 30px;
+  align-self: center;
+  font-family: "Inter", sans-serif;
+}
+.itemFlow div:nth-of-type(2) {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  flex-grow: 1;
+  text-align: end;
+  margin-right: 40px;
+  color: #1876f2;
+  align-self: center;
+}
+.itemFlow .left {
+  display: flex;
+}
+.itemFlow .left img {
+  height: 50px;
+  width: 50px;
+}
+.itemFlow .left .content {
+  margin-left: 5px;
+}
+.content .name {
+  color: black;
+}
+.content .reqForYou {
+  font-weight: 400;
+}

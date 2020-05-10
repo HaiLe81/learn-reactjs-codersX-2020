@@ -1,0 +1,14 @@
+.listItem {
+  width: 80%;
+}
+.contentUpComming {
+  overflow-y: auto;
+  max-height: 40vh;
+}
+.upComming {
+  margin-top: 1em;
+}
+.contentFinished {
+  overflow-y: auto;
+  max-height: 28vh;
+}
