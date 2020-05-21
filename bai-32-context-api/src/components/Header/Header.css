@@ -1,0 +1,16 @@
+.dropdown {
+    list-style: none;
+}
+.dropdown a {
+    color: rgba(0,0,0,.5);
+}
+.cart {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.nav-item img {
+    height: 30px;
+    width: 20px;
+    padding: 0;
+}
