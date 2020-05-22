@@ -1,0 +1,8 @@
+.Cart {
+    display: flex;
+    justify-content: center;
+}
+.Cart .ant-table-wrapper {
+    width: 80%;
+    margin-top: 50px;
+}

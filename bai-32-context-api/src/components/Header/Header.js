@@ -14,11 +14,12 @@ import {
 } from "reactstrap";
 import { Link } from "react-router-dom";
 import { DataContext } from "../../context/DataProvider";
+import { Badge } from "antd";
 
 export default function Header() {
   const context = useContext(DataContext);
   const [isOpen, setIsOpen] = useState(false);
-
+  const cartSize = context.cart.cartSize;
   const toggle = () => setIsOpen(!isOpen);
   return (
     <div>
@@ -52,10 +53,13 @@ export default function Header() {
               </Link>
             </NavItem>
             <NavItem className="cart">
-              <img
-                alt="not found"
-                src="https://cdn.glitch.com/1eeeaa03-4c95-4acc-925a-ac933fed2ce6%2Fsupermarket.svg?v=1587797125082"
-              />
+              <Link to="/cart">
+                <img
+                  alt="not found"
+                  src="https://cdn.glitch.com/1eeeaa03-4c95-4acc-925a-ac933fed2ce6%2Fsupermarket.svg?v=1587797125082"
+                />
+                <Badge count={cartSize} />
+              </Link>
             </NavItem>
           </Nav>
           <UncontrolledDropdown nav inNavbar>
@@ -66,7 +70,7 @@ export default function Header() {
               <DropdownItem>Profile</DropdownItem>
               <DropdownItem>Create Shop</DropdownItem>
               <DropdownItem divider />
-              <DropdownItem>Logout</DropdownItem>
+              <DropdownItem onClick={() => context.auth.resetUser()}>Logout</DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>
         </Collapse>

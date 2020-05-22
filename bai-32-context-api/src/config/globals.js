@@ -25,7 +25,19 @@ export const messages = {
 	users: {
 		get: {
 			success: "Tải danh sách người dùng thành công!",
-			failed: "Tải danh sách người dùng thất bại"
+			failed: "Tải danh sách người dùng thất bại!"
+		}
+	},
+	user: {
+		get: {
+			success: "Tải thông tin người dùng thành công!",
+			failed: "Tải thông tin người dùng thất bại!"
+		}
+	},
+	books: {
+		get: {
+			success: "Tải danh sách sách thành công!",
+			failed: "Tải danh sách sách thất bại"
 		}
 	}
 }

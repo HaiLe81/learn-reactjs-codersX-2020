@@ -1,0 +1,22 @@
+.users {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.users .u-table {
+  margin-top: 20px;
+  width: 70%;
+}
+
+.users .searchBar {
+  margin-top: 50px;
+  width: 70%;
+}
+.users .searchBar .form-group input {
+  width: 400px;
+}
+/*  custom avatarUrl */
+.ant-table-cell img {
+  height: 30px;
+  width: 30px;
+}

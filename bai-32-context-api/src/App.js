@@ -11,6 +11,7 @@ import Transactions from "./components/Transactions/Transactions";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { DataProvider } from "./context/DataProvider";
 import { RouteWithAuth } from "./custom-routes/RouteWithAuth";
+import { Cart } from "./components/cart/cart";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
             <RouteWithAuth path="/">
               <Header />
               <Switch>
+                <Route path="/cart" component={Cart} />
                 <Route path="/transactions" component={Transactions} />
                 <Route path="/books" component={Books} />
                 <Route path="/users" component={Users} />
