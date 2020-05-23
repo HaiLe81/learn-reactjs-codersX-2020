@@ -8,7 +8,6 @@ import { PlusOutlined } from "@ant-design/icons";
 export default function Books() {
   const context = useContext(DataContext);
   const books = context.listBook.books;
-  console.log('books', books)
   const addToCart = context.actions.addToCart;
 
   const alertAdded = (title) => message.warning(`${title} is Added`);

@@ -39,6 +39,16 @@ export const messages = {
 			success: "Tải danh sách sách thành công!",
 			failed: "Tải danh sách sách thất bại"
 		}
+	},
+	transactions: {
+		get: {
+			success: "Tải danh sách dao dịch thành công!",
+			failed: "Tải danh sách dao dịch thất bại!"
+		},
+		create: {
+			success: "Tạo dao dịch thành công!",
+			failed: "Tạo dao dịch thất bại"
+		}
 	}
 }
 export default {

@@ -18,6 +18,8 @@ import { Badge } from "antd";
 
 export default function Header() {
   const context = useContext(DataContext);
+  const isAdmin = context.account.user.isAdmin;
+
   const [isOpen, setIsOpen] = useState(false);
   const cartSize = context.cart.cartSize;
   const toggle = () => setIsOpen(!isOpen);
@@ -37,9 +39,11 @@ export default function Header() {
               </Link>
             </NavItem>
             <NavItem>
-              <Link className="nav-link" to="/users">
-                Users
-              </Link>
+              {isAdmin && (
+                <Link className="nav-link" to="/users">
+                  Users
+                </Link>
+              )}
               {/* <NavLink href="https://github.com/reactstrap/reactstrap">Users</NavLink> */}
             </NavItem>
             <NavItem>
@@ -70,7 +74,9 @@ export default function Header() {
               <DropdownItem>Profile</DropdownItem>
               <DropdownItem>Create Shop</DropdownItem>
               <DropdownItem divider />
-              <DropdownItem onClick={() => context.auth.resetUser()}>Logout</DropdownItem>
+              <DropdownItem onClick={() => context.auth.resetUser()}>
+                Logout
+              </DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>
         </Collapse>

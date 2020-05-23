@@ -1,6 +1,7 @@
 import React, { createContext, useState, useEffect } from "react";
 import { getUsers } from "../services/user";
 import { getBooks } from "../services/book";
+import { createTransacton } from "../services/transaction";
 
 const DataContext = createContext(null);
 
@@ -49,9 +50,19 @@ const DataProvider = (props) => {
   };
 
   const resetUser = () => {
-    console.log("clicked");
     setUser(userDefault);
     setIsAuthenticated(false);
+  };
+
+  const rentBook = async () => {
+    if (!cart) return;
+    const newA = Object.values(cart);
+    const bookId = newA.map((item) => item.id);
+    await createTransacton(user.id, bookId).then((res) => {
+      setCart();
+      setCartSize(0);
+      return res;
+    });
   };
   return (
     <DataContext.Provider
@@ -64,6 +75,7 @@ const DataProvider = (props) => {
         actions: {
           addToCart,
           removeBookInCart,
+          rentBook,
         },
       }}
     >
