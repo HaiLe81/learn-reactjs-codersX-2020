@@ -56,7 +56,7 @@ export const Cart = () => {
   return (
     <div className="Cart">
       <Table rowKey="id" dataSource={books} columns={columns} />
-      <div>
+      <div className="mt-2">
         <Button
           loading={loading}
           disabled={cart === null ? true : false}

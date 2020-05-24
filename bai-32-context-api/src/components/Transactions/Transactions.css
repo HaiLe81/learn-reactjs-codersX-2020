@@ -1,0 +1,8 @@
+.t-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.t-wrapper .t-table {
+    width: 70%;
+}
