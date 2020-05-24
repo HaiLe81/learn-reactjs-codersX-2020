@@ -7,6 +7,7 @@ export default function Transactions() {
   const context = useContext(DataContext);
   const data = context.listTrans.transactions;
   const users = context.listUser.users;
+  const books = context.listBook.books
   const columns = [
     {
       title: "#",
@@ -29,7 +30,11 @@ export default function Transactions() {
       dataIndex: "bookId",
       key: "bookId",
       render: (text) => {
-        return text;
+        let bookTitle = text.reduce((acc,cur) => {
+          const title = books.find(item => item.id === cur).title
+          return acc.concat(title);
+        },[]).join(",")
+        return bookTitle;
       }
     }
     // {

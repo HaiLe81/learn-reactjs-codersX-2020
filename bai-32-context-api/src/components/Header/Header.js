@@ -71,7 +71,9 @@ export default function Header() {
               {context.account.user.name}
             </DropdownToggle>
             <DropdownMenu right>
-              <DropdownItem>Profile</DropdownItem>
+              <DropdownItem>
+                <Link to="/profile">Profile</Link>
+              </DropdownItem>
               <DropdownItem>Create Shop</DropdownItem>
               <DropdownItem divider />
               <DropdownItem onClick={() => context.auth.resetUser()}>
