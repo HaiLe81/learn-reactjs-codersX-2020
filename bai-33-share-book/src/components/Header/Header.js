@@ -10,13 +10,15 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem,
+  DropdownItem
 } from "reactstrap";
+import { Button } from 'antd';
 import { Link } from "react-router-dom";
 import { DataContext } from "../../context/DataProvider";
 
 export default function Header() {
   const context = useContext(DataContext);
+  const isLoged = context.auth.isAuthenticated;
 
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
@@ -41,23 +43,32 @@ export default function Header() {
               </Link>
             </NavItem>
           </Nav>
-          <UncontrolledDropdown nav inNavbar>
-            <DropdownToggle nav caret>
-              {context.account.user.name}
-            </DropdownToggle>
-            <DropdownMenu right>
-              <DropdownItem>
-                <Link to="/profile">Profile</Link>
-              </DropdownItem>
-              <DropdownItem>
-              <Link to="/addBook">Add Book</Link>
-              </DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem onClick={() => context.auth.resetUser()}>
-                Logout
-              </DropdownItem>
-            </DropdownMenu>
-          </UncontrolledDropdown>
+          {!isLoged && (
+            <Button type="primary" size="small">
+              <Link to="/login">
+                Login
+              </Link>
+            </Button>
+          )}
+          {isLoged && (
+            <UncontrolledDropdown nav inNavbar>
+              <DropdownToggle nav caret>
+                {context.account.user.name}
+              </DropdownToggle>
+              <DropdownMenu right>
+                <DropdownItem>
+                  <Link to="/profile">Profile</Link>
+                </DropdownItem>
+                <DropdownItem>
+                  <Link to="/addBook">Add Book</Link>
+                </DropdownItem>
+                <DropdownItem divider />
+                <DropdownItem onClick={() => context.auth.resetUser()}>
+                  Logout
+                </DropdownItem>
+              </DropdownMenu>
+            </UncontrolledDropdown>
+          )}
         </Collapse>
       </Navbar>
     </div>

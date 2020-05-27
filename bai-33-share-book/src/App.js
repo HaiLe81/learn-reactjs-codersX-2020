@@ -17,16 +17,17 @@ export default function App() {
     <div className="App">
       <Router>
         <DataProvider>
+          <Header />
           <Switch>
+            {/* <Header /> */}
             <Route path="/login" component={Login} />
             <Route path="/signup" component={SignUp} />
+            <Route path="/books" component={Books} />
+            <Route path="/" exact component={Home} />
             <RouteWithAuth path="/">
-              <Header />
               <Switch>
                 <Route path="/addBook" component={AddBook} />
                 <Route path="/profile" component={Profile} />
-                <Route path="/books" component={Books} />
-                <Route path="/" exact component={Home} />
               </Switch>
             </RouteWithAuth>
           </Switch>

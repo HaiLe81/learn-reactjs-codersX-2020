@@ -4,6 +4,7 @@ import "antd/dist/antd.css";
 import { Form, Input, Button, Select, message } from "antd";
 import { DataContext } from "../../context/DataProvider";
 import { createBook } from "../../services/book";
+import { useRouter } from "../../hooks/useRouter";
 
 const layout = {
   labelCol: {
@@ -23,6 +24,8 @@ const tailLayout = {
 
 export default function AddBook() {
   const context = useContext(DataContext);
+  const router = useRouter();
+
   const userId = context.account.user.id;
   const [image, setImage] = useState("");
 
@@ -40,6 +43,7 @@ export default function AddBook() {
     createBook(data)
       .then((res) => {
         message[res.status](res.message);
+        router.push("/books");
       })
       .catch((err) => {
         message[err.status](err.message);

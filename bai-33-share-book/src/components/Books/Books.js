@@ -1,12 +1,20 @@
 import React, { useContext } from "react";
 import "./Books.css";
 import { DataContext } from "../../context/DataProvider";
-import { Table, Space } from "antd";
+import { Table, Space, Button, message } from "antd";
 
 export default function Books() {
   const context = useContext(DataContext);
   const books = context.listBook.books;
   const users = context.listUser.users;
+  const isLoged = context.auth.isAuthenticated;
+
+  const received = () => {
+    if(!isLoged) {
+      message.info('You Need Login To Register To Receive Reward');
+    }
+    
+  }
 
   const columns = [
     {
@@ -64,13 +72,17 @@ export default function Books() {
       index: "byUser",
       render: (text) => {
         const result = users.find((item) => item.id === text);
+        if (!result) return "";
         return result.name;
       },
-    }
+    },
   ];
   return (
     <div className="books">
       <div className="b-table">
+        <Button type="primary" size="small" onClick={received}>
+          Register to receive your reward
+        </Button>
         <Table rowKey="id" dataSource={books} columns={columns} />
       </div>
     </div>
