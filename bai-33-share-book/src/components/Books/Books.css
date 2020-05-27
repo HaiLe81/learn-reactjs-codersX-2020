@@ -1,0 +1,25 @@
+.books {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.books .b-table {
+  margin-top: 20px;
+  width: 70%;
+}
+
+.books .searchBar {
+  margin-top: 50px;
+  width: 70%;
+}
+.books .searchBar .form-group input {
+  width: 400px;
+}
+/*  custom avatarUrl */
+.ant-table-cell img {
+  height: 30px;
+  width: 30px;
+}
+.ant-space-item svg {
+  cursor: pointer;
+}
