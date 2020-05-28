@@ -57,7 +57,7 @@ export default function Header() {
               </DropdownToggle>
               <DropdownMenu right>
                 <DropdownItem>
-                  <Link to="/profile">Profile</Link>
+                  <Link to="/manageBook">Manage Book</Link>
                 </DropdownItem>
                 <DropdownItem>
                   <Link to="/addBook">Add Book</Link>

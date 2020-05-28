@@ -9,7 +9,7 @@ import SignUp from "./components/auth/signup/signup";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { DataProvider } from "./context/DataProvider";
 import { RouteWithAuth } from "./custom-routes/RouteWithAuth";
-import { Profile } from "./components/profile/profile";
+import { ManageBook } from "./components/manageBook/manageBook";
 import AddBook from "./components/AddBook/AddBook";
 
 export default function App() {
@@ -27,7 +27,7 @@ export default function App() {
             <RouteWithAuth path="/">
               <Switch>
                 <Route path="/addBook" component={AddBook} />
-                <Route path="/profile" component={Profile} />
+                <Route path="/manageBook" component={ManageBook} />
               </Switch>
             </RouteWithAuth>
           </Switch>

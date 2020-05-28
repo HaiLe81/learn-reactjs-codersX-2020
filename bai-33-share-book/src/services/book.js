@@ -35,7 +35,7 @@ export const createBook = async ({
         subType,
         coverUrl,
         byUser,
-      },
+      }
     });
     const { newBook } = response.data;
 
@@ -46,5 +46,17 @@ export const createBook = async ({
     };
   } catch (error) {
     throw new RequestException(status.error, messages.books.create.failed);
+  }
+};
+
+export const getBooksByUser = async (id) => {
+  try {
+    const result = await axios({
+      method: "get",
+      url: `${pathname}/${id}`,
+    }).then((res) => res.data.books);
+    return result;
+  } catch (error) {
+    throw new RequestException(status.error, messages.books.get.failed);
   }
 };

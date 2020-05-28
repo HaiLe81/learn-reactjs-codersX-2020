@@ -2,19 +2,26 @@ import React, { useContext } from "react";
 import "./Books.css";
 import { DataContext } from "../../context/DataProvider";
 import { Table, Space, Button, message } from "antd";
+import { registerNumber } from "../../services/luckynumber";
 
 export default function Books() {
   const context = useContext(DataContext);
   const books = context.listBook.books;
   const users = context.listUser.users;
+  const user = context.account.user;
   const isLoged = context.auth.isAuthenticated;
 
   const received = () => {
-    if(!isLoged) {
-      message.info('You Need Login To Register To Receive Reward');
+    const data = { userId: user.id, email: user.email };
+
+    if (!isLoged) {
+      message.info("You Need Login To Register To Receive Reward");
+    } else {
+      registerNumber(data).then((res) => {
+        message[res.status](`${res.message} ${res.number.numberLucky}`);
+      });
     }
-    
-  }
+  };
 
   const columns = [
     {

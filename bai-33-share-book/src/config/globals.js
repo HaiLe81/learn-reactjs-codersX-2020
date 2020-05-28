@@ -1,6 +1,6 @@
 export const env = {
 	NODE_ENV: process.env.NODE_ENV,
-	SERVER_URL: process.env.REACT_APP_SERVER_URL || 'https://crud-list-book.glitch.me/api/v1/',
+	SERVER_URL: process.env.REACT_APP_SERVER_URL ||  'http://localhost:3100/api/v1/',
 	COOKIE_KEY: process.env.REACT_APP_COOKIE_KEY || ''
 };
 
@@ -44,14 +44,16 @@ export const messages = {
 			failed: "Tạo sách thất bại!"
 		}
 	},
-	transactions: {
-		get: {
-			success: "Tải danh sách dao dịch thành công!",
-			failed: "Tải danh sách dao dịch thất bại!"
-		},
+	number: {
 		create: {
-			success: "Tạo dao dịch thành công!",
-			failed: "Tạo dao dịch thất bại"
+			success: "Đăng ký thành công. Số may mắn của bạn: ",
+			failed: "Đăng ký số may mắn thất bại!"
+		}
+	},
+	randomLucky: {
+		create: {
+			success: "Số mắn là: ",
+			failed: "Oop~ Đã xảy ra lỗi trong quá trình quay số!"
 		}
 	}
 }

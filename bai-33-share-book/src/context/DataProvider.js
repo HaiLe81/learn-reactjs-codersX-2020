@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from "react";
-import { getBooks } from "../services/book";
+import { getBooks, getBooksByUser } from "../services/book";
 import { getUsers } from "../services/user";
 
 const DataContext = createContext(null);
@@ -15,6 +15,7 @@ const DataProvider = (props) => {
   const [user, setUser] = useState(userDefault);
   const [users, setUsers] = useState([]);
   const [books, setBooks] = useState([]);
+  const [bookByUser, setBookByUser] = useState([]);
 
   useEffect(() => {
     getBooks().then((res) => setBooks(res));
@@ -23,6 +24,14 @@ const DataProvider = (props) => {
   useEffect(() => {
     getUsers().then((res) => setUsers(res));
   }, []);
+
+  useEffect(() => {
+    var id = "";
+    if (user) {
+      id = user.id;
+    }
+    getBooksByUser(id).then((res) => setBookByUser(res));
+  }, [user]);
 
   const resetUser = () => {
     setUser(userDefault);
@@ -38,7 +47,7 @@ const DataProvider = (props) => {
       value={{
         account: { user, setUser },
         auth: { isAuthenticated, setIsAuthenticated, resetUser },
-        listBook: { books },
+        listBook: { books, bookByUser },
         listUser: { users },
         actions: {
           getBookById,
